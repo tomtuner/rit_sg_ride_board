@@ -2,7 +2,8 @@
 
 class Login_model extends CI_Model {
 	
-	function login($user_password){
+	function login($email, $password){
+		
 		$this -> db -> select('id, email, password');
 		$this -> db -> from ('users');
 		$this -> db -> where ('email = ' . "'" . $email . "'");
