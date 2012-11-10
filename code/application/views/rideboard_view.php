@@ -1,8 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>SG Ride Board</title>
-<link rel="stylesheet" type="text/css" href="css/rideboard.css" />
+<meta http-equiv="Content-language" content="en">
+<meta name="Author" content="TSD">
+<meta name="description" content="An online ride board to plan trips, establish car pools and get to where you want to go efficiently.">
 
+<!-- Stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/rideboard.css" />
 </head>
 <body>
 <div id="master">
