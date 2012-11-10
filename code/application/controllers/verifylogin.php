@@ -44,7 +44,7 @@ class VerifyLogin extends CI_Controller {
 		}
 		else
 		{
-			$this->form_validation->set_message('check_database', 'Invaild email address or password');
+			$this->form_validation->set_message('check_database', 'Invalid email address or password');
 			return false;
 		}
 	}
