@@ -47,6 +47,7 @@ class SignUp extends CI_Controller {
 			$school_address = $this->input->post('school_address');
 			$home_address = $this->input->post('home_address');
 			$deaf = $this->input->post('deaf');
+			$activation_code = $this->_random_string(16);
 			
 			$data = array(
 			'email'	=> $email,
@@ -56,11 +57,43 @@ class SignUp extends CI_Controller {
 			'school_address'	=>	$school_address,
 			'home_address'	=>	$home_address,
 			'ph_num'	=>	$ph_num,
-			'deaf'	=>	$deaf
+			'deaf'	=>	$deaf,
+			'activation_code'	=>	$activation_code
 		);
 
 		$this->SignUp_model->register_user($data);
+		
+		// email confirmation
+		$this->load->library('email');
+		$this->email->from('rideboard@rit.edu');
+		$this->email->to($email);
+		$this->email->subject('Ride Board Confirmation');
+		$this->email->message('Please click this link to confirm your registration ' .anchor('signup/register_confirm/'.$activation_code, 'Confirm Registration'));
+		
+		echo 'Please check your email to confirm your registration.';
+		$this->email->send();
 		}		
+	}
+	
+	public function register_confirm()
+	{
+		$registration_code = $this->uri->segment(3);
+		
+		if ($registration_code == '')
+		{
+			echo 'Error no registration code in URL';
+			exit();
+		}
+		
+		$registration_confirmed = $this->SignUp_model->confirm_registration($registration_code);
+		if ($registration_confirmed)
+		{
+			echo 'You have successfully registered';
+		}
+		else
+		{
+			echo 'No record found for this activation code';
+		}
 	}
 	
 	public function rit_email_check($email)
@@ -76,4 +109,16 @@ class SignUp extends CI_Controller {
 		}
 	}
 	
+	public function _random_string($length)
+	{
+		$len = $length;
+		$base = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwyz123456789';
+		$max = strlen($base) - 1;
+		$activatecode = '';
+		mt_srand((double)microtime()*1000000);
+		while (strlen($activatecode) < $len) {
+			$activatecode .= $base{mt_rand(0, $max)};
+		}
+		return $activatecode;
+	}
 }
