@@ -16,7 +16,7 @@
 	<div id="header">
 		<div id=access>
 			<ul class="top_nav" >
-				<li class="horizontal"><?= anchor('rideboard', 'Sign Up','class="right_header_text"'); ?></li>
+				<li class="horizontal"><?= anchor('signup', 'Sign Up','class="right_header_text"'); ?></li>
 				<li class="horizontal"><?= anchor('login', 'Sign In','class="right_header_text"'); ?></li>
 			</ul>
 		</div>
