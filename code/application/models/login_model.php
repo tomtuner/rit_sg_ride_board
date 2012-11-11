@@ -14,7 +14,7 @@ class Login_model extends CI_Model {
 		
 		if($query -> num_rows() == 1)
 		{
-			return $query->result();
+			return true;
 		}
 		else
 		{
@@ -24,17 +24,12 @@ class Login_model extends CI_Model {
 	
 	function activated($email){
 		
-		$this -> db -> select('activated');
-		$this -> db -> from('users');
-		$this -> db -> where('email = ' . "'" . $email . "'");
-		$this -> db -> where('activated = 1');
-		$this -> db -> limit(1);
+		$this -> db -> select('id');
+		$result = $this->db->get_where('users', array('activated' => '1', 'email' => $email));
 		
-		$query = $this -> db -> get();
-		
-		if($query -> num_rows() == 1)
+		if($result -> num_rows() == 1)
 		{
-			return $query -> result();
+			return true;
 		}
 		else
 		{

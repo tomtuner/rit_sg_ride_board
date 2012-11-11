@@ -50,6 +50,7 @@ class Login extends CI_Controller {
 			else
 			{
 				$this->form_validation->set_message('check_database', 'Your account has not been activated.  Please check your email for activation link');
+				return false;
 			}
 		}
 		else
