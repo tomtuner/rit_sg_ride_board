@@ -22,4 +22,24 @@ class Login_model extends CI_Model {
 		}
 	}
 	
+	function activated($email){
+		
+		$this -> db -> select('activated');
+		$this -> db -> from('users');
+		$this -> db -> where('email = ' . "'" . $email . "'");
+		$this -> db -> where('activated = 1');
+		$this -> db -> limit(1);
+		
+		$query = $this -> db -> get();
+		
+		if($query -> num_rows() == 1)
+		{
+			return $query -> result();
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 }

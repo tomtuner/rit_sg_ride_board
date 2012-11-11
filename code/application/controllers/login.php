@@ -33,16 +33,24 @@ class Login extends CI_Controller {
 		$result = $this->login_model->login($email, $password);
 		if($result)
 		{
-			$sess_array = array();
-			foreach($result as $row)
-			{
-				$sess_array = array(
-						'id' => $row->id,
-						'email' => $row->email
-				);
-				$this->session->set_userdata('logged_in', $sess_array);
+			$activated = $this->login_model->activated($email);
+			if($activated)
+			{	
+				$sess_array = array();
+				foreach($result as $row)
+				{
+					$sess_array = array(
+							'id' => $row->id,
+							'email' => $row->email
+							);
+					$this->session->set_userdata('logged_in', $sess_array);
+				}
+				return TRUE;
 			}
-			return TRUE;
+			else
+			{
+				$this->form_validation->set_message('check_database', 'Your account has not been activated.  Please check your email for activation link');
+			}
 		}
 		else
 		{
