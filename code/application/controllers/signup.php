@@ -72,6 +72,8 @@ class SignUp extends CI_Controller {
 		
 		echo 'Please check your email to confirm your registration.';
 		$this->email->send();
+		
+		$this->load->view('registered_view');
 		}		
 	}
 	
