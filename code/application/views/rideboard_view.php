@@ -7,7 +7,7 @@
 <meta name="description" content="An online ride board to plan trips, establish car pools and get to where you want to go efficiently.">
 
 <!-- Stylesheets -->
-<link rel="stylesheet" type="text/css" href="css/rideboard.css" />
+<link rel="stylesheet" type="text/css" href="<?=base_url('css/rideboard.css');?>" />
 
 
 </head>
