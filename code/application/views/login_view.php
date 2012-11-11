@@ -6,15 +6,19 @@
 </head>
 <body>
 	<h1>Login to SG Ride Board</h1>
-	<?php echo validation_errors(); ?>
-	<?php echo form_open('verifylogin'); ?>
+	<?=validation_errors(); ?>
+	<?=form_open('verifylogin'); ?>
+	<div id = "field">
 	<label for="email">Email:</label>
 	<input type="text" size="20" id="email" name="email"/>
 	<br/>
 	<label for="password">Password:</label>
 	<input type="password" size="20" id="password" name="password"/>
 	<br/>
+	</div>
+	<div id = "submit">
 	<input type="submit" value="Login"/>
-	</form>
+	</div>
+	<?=form_close() ?>
 </body>
 </html>
