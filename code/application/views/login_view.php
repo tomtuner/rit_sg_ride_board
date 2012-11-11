@@ -7,7 +7,7 @@
 <body>
 	<h1>Login to SG Ride Board</h1>
 	<?=validation_errors(); ?>
-	<?=form_open('verifylogin'); ?>
+	<?=form_open('login'); ?>
 	<div id = "field">
 	<label for="email">Email:</label>
 	<input type="text" size="20" id="email" name="email"/>
