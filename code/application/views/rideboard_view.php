@@ -7,7 +7,7 @@
 <meta name="description" content="An online ride board to plan trips, establish car pools and get to where you want to go efficiently.">
 
 <!-- Stylesheets -->
-<link rel="stylesheet" type="text/css" href="css/rideboard.css" />
+<link rel="stylesheet" type="text/css" href="<?=base_url('css/rideboard.css');?>" />
 
 
 </head>
@@ -16,7 +16,7 @@
 	<div id="header">
 		<div id=access>
 			<ul class="top_nav" >
-				<li class="horizontal"><?= anchor('rideboard', 'Sign Up','class="right_header_text"'); ?></li>
+				<li class="horizontal"><?= anchor('signup', 'Sign Up','class="right_header_text"'); ?></li>
 				<li class="horizontal"><?= anchor('login', 'Sign In','class="right_header_text"'); ?></li>
 			</ul>
 		</div>

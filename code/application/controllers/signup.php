@@ -18,7 +18,9 @@ class SignUp extends CI_Controller {
 	{
 		$this->load->library('form_validation');
 		
-		$this->form_validation->set_rules('email', 'E-mail', 'trim|required|valid_email|callback_rit_email_check|xss_clean|strtolower');
+		$this->form_validation->set_message('is_unique', 'This E-mail address is already taken.'); 
+		
+		$this->form_validation->set_rules('email', 'E-mail', 'trim|required|valid_email|callback_rit_email_check|xss_clean|strtolower|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]|xss_clean|sha1');
 		$this->form_validation->set_rules('password_conf', 'Password Confirmation', 'trim|required|min_length[6]|matches[password]|xss_clean');
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|xss_clean|alpha');
@@ -56,12 +58,8 @@ class SignUp extends CI_Controller {
 			'ph_num'	=>	$ph_num,
 			'deaf'	=>	$deaf
 		);
-			
-/* 			$data = array($email, $password, $first_name, $last_name, $ph_num, $school_address, $home_address); */
-			
-			echo $email;
-			echo $password;
-			$this->SignUp_model->register_user($data);
+
+		$this->SignUp_model->register_user($data);
 		}		
 	}
 	
