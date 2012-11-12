@@ -33,8 +33,8 @@ class SignUp extends CI_Controller {
 		if($this->form_validation->run() == FALSE)
 		{
 			// Hasn't been run or validation errors
-			$this->load->view('sign_up_view');
-
+			$data = array('title' => "Sign Up", 'main_content' => 'sign_up_view');
+			$this->load->view('template', $data);
 		}
 		else
 		{
