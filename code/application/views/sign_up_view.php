@@ -55,10 +55,16 @@ $home_address = array (
 	'value'	=>	set_value('home_address')
 );
 
+$options = array(
+                  'male'  => 'Male',
+                  'female'    => 'Female',
+                  'none'   => 'I\'d rather not say'
+);
+
 $deaf = array(
 	'name'        => 'deaf',
 	'id'          => 'deaf',
-	'value'       => set_value('deaf')
+	'value'       => 'accept'
 );
 	
 ?>
@@ -110,6 +116,12 @@ $deaf = array(
 	<label for="home_address">Home Address</label>
 	<div>
 		<?=form_textarea($home_address); ?>
+	</div>
+</li>
+<li>
+	<label for="sex">What do you identify as?</label>
+	<div>
+		<?=form_dropdown('sex', $options, 'large');?>
 	</div>
 </li>
 <li>

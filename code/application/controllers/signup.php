@@ -28,6 +28,7 @@ class SignUp extends CI_Controller {
 		$this->form_validation->set_rules('ph_num', 'Phone Number', 'trim|required|xss_clean|numeric');
 		$this->form_validation->set_rules('school_address', 'School Address', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('home_address', 'Home Address', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('sex', 'Gender', 'trim|strtolower|xss_clean');
 		$this->form_validation->set_rules('deaf', 'Deaf', 'trim|xss_clean');
 
 		if($this->form_validation->run() == FALSE)
@@ -47,8 +48,10 @@ class SignUp extends CI_Controller {
 			$school_address = $this->input->post('school_address');
 			$home_address = $this->input->post('home_address');
 			$deaf = $this->input->post('deaf');
+			$sex = $this->input->post('sex');
+			$sex = $this->convert_sex_to_num($sex);
 			$activation_code = $this->_random_string(16);
-			
+						
 			$data = array(
 			'email'	=> $email,
 			'password'	=>	$password,
@@ -58,6 +61,7 @@ class SignUp extends CI_Controller {
 			'home_address'	=>	$home_address,
 			'ph_num'	=>	$ph_num,
 			'deaf'	=>	$deaf,
+			'sex'	=>	$sex,
 			'activation_code'	=>	$activation_code
 		);
 
@@ -111,7 +115,24 @@ class SignUp extends CI_Controller {
 		}
 	}
 	
-	public function _random_string($length)
+	function convert_sex_to_num($sex)
+	{
+		if ($sex == 'male')
+		{
+			return 1;
+		}
+		else if ($sex == 'female')
+		{
+			return 2;
+		}
+		else
+		{
+			return 0;
+		}
+	
+	}
+	
+	function _random_string($length)
 	{
 		$len = $length;
 		$base = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwyz123456789';
