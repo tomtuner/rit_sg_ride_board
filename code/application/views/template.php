@@ -17,17 +17,8 @@
         <link rel="stylesheet" href="<?=base_url('css/main.css');?>">
         <link rel="stylesheet" href="<?=base_url('css/rideboard.css');?>">
         <script src="<?=base_url('js/vendor/modernizr-2.6.2.min.js');?>"></script>
-        <script src="<?=base_url('jquery.easing.js');?>"></script>
-        <script src="<?=base_url('jquery.collapse.js');?>"></script>
-        <script type="text/javascript">			
-			$(function(){				
-				$('#city_list').jqcollapse({
-				   slide: true,
-				   speed: 1000,
-				   easing: 'easeOutCubic'
-				});				
-			});			
-		</script>
+
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -51,6 +42,18 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
         <script src="<?=base_url('js/plugins.js');?>"></script>
         <script src="<?=base_url('js/main.js');?>"></script>
+        <script src="<?=base_url('js/jquery.js')?>"></script>
+        <script src="<?=base_url('js/jquery.easing.js');?>"></script>
+        <script src="<?=base_url('js/jquery.collapse.js');?>"></script>
+                <script type="text/javascript">			
+			$(function(){				
+				$('#city_list').jqcollapse({
+				   slide: true,
+				   speed: 1000,
+				   easing: 'easeOutCubic'
+				});				
+			});			
+		</script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
