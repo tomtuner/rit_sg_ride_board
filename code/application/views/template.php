@@ -30,7 +30,7 @@
 			<header>
 				<?php $this->load->view('includes/header');?>
 			</header> 
-			<div id="main" role="main">
+			<div id="content" role="content">
 				<?php $this->load->view($main_content);?>
 			</div>
 			<footer>
