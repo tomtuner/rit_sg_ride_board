@@ -1,1 +1,3 @@
-<h1>Footer</h1>
+<div id="footer">
+	<div id="moto">This page was created by those who care about innovation.</div>
+</div>

@@ -1,4 +1,4 @@
-<?php
+<?php if( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Rideboard extends CI_Controller {
 
 	function __construct(){
@@ -8,6 +8,7 @@ class Rideboard extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('rideboard_view');
+		$data = array('title' => "rideboard", 'main_content' => 'rideboard_view');
+		$this->load->view('template', $data);
 	}
 }

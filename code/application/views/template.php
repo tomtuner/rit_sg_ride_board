@@ -15,6 +15,7 @@
 		<title>$title</title>
         <link rel="stylesheet" href="<?=base_url('css/normalize.css');?>">
         <link rel="stylesheet" href="<?=base_url('css/main.css');?>">
+        <link rel="stylesheet" href="<?=base_url('css/rideboard.css');?>">
         <script src="<?=base_url('js/vendor/modernizr-2.6.2.min.js');?>"></script>
     </head>
     <body>
