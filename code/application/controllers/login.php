@@ -18,7 +18,8 @@ class Login extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('login_view');
+			$data = array('title' => "Log In", 'main_content' => 'login_view');
+			$this->load->view('template', $data);
 		}
 		else
 		{
