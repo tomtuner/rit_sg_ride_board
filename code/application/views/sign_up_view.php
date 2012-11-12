@@ -56,9 +56,9 @@ $home_address = array (
 );
 
 $options = array(
-                  'male'  => 'Male',
-                  'female'    => 'Female',
-                  'none'   => 'I\'d rather not say'
+	'male'  => 'Male',
+    'female'    => 'Female',
+    'none'   => 'I\'d rather not say'
 );
 
 $deaf = array(

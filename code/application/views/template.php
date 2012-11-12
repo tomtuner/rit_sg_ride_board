@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<title><?=$title;?></title>
         <link rel="stylesheet" href="<?=base_url('css/normalize.css');?>">
         <link rel="stylesheet" href="<?=base_url('css/main.css');?>">
         <link rel="stylesheet" href="<?=base_url('css/rideboard.css');?>">
@@ -30,7 +29,7 @@
 			<header>
 				<?php $this->load->view('includes/header');?>
 			</header> 
-			<div id="content" role="content">
+			<div id="content" role="main">
 				<?php $this->load->view($main_content);?>
 			</div>
 			<footer>

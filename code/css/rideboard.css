@@ -83,6 +83,7 @@ float:right;
 
 #content{
 	width:100%;
+	min-height: 400px;
 	background:#FFFFFF;
 	margin-left: auto;
 	margin-right: auto;
