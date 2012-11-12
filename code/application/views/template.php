@@ -6,13 +6,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>$title</title>
+        <title><?=$title?></title>
 		<meta name="description" content="An online ride board to plan trips, establish car pools and get to where you want to go efficiently.">
 		<link type="text/plain" rel="author" href="<?=base_url('humans.txt');?>" />
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<title>$title</title>
+		<title><?=$title;?></title>
         <link rel="stylesheet" href="<?=base_url('css/normalize.css');?>">
         <link rel="stylesheet" href="<?=base_url('css/main.css');?>">
         <link rel="stylesheet" href="<?=base_url('css/rideboard.css');?>">
@@ -26,13 +26,13 @@
         <!-- Add your site or application content here -->
         <div id="master">
 			<header>
-				<?php $this->load->name('includes/header');?>
+				<?php $this->load->view('includes/header');?>
 			</header> 
 			<div id="main" role="main">
-				<?php $this->load->name($main_content);?>
+				<?php $this->load->view($main_content);?>
 			</div>
 			<footer>
-				<?php $this->load->name('includes/footer');?>
+				<?php $this->load->view('includes/footer');?>
 			</footer>       
         </div>
 
