@@ -4,7 +4,17 @@
 	</div>
 	<div id="content_list" class="content_style">
 		<ul id="city_list">
-			<li class="unselected" ><div class="city_text">Boston, MA</div></li>
+			<li class="unselected" ><div class="city_text">Boston, MA</div>
+				<ul id="trips">
+					<li class="trip_list">Sunday</li>
+					<li class="trip_list">Monday</li>
+					<li class="trip_list">Tuesday</li>
+					<li class="trip_list">Wednesday</li>
+					<li class="trip_list">Thursday</li>
+					<li class="trip_list">Friday</li>
+					<li class="trip_list">Saturday</li>
+				</ul>
+			</li>
 			<li class="unselected" ><div class="city_text">Buffalo, NY</div></li>
 			<li class="unselected" ><div class="city_text">Burlington, VT</div></li>
 			<li class="unselected" ><div class="city_text">Syrcuse, NY</div></li>
