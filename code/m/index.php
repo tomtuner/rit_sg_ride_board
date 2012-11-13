@@ -1,7 +1,5 @@
 <?php
 
-$server_url_prefix = '/var/www/html/CodeIgniter/';
-
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -60,7 +58,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$system_path = server_url_prefix . 'system';
+	$system_path = '../system';
 
 /*
  *---------------------------------------------------------------
@@ -76,7 +74,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = $server_url_prefix . 'application';
+	$application_folder = '../application';
 
 /*
  *---------------------------------------------------------------
@@ -92,7 +90,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$view_folder = $server_url_prefix . '/m/views';
+	$view_folder = 'views';
 
 /*
  * --------------------------------------------------------------------
