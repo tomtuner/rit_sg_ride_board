@@ -47,8 +47,8 @@
                 <script type="text/javascript">			
 			$(function(){				
 				$('#city_list').jqcollapse({
-				   slide: true,
-				   speed: 1000,
+				   slide: false,
+				   speed: 300,
 				   easing: 'easeOutCubic'
 				});				
 			});			

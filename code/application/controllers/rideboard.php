@@ -5,9 +5,22 @@ class Rideboard extends CI_Controller {
 		parent::__construct();
 	}
 	
-	public function index()
+	function check_database(){
+			
+		$result = $this->rideboard_model->popular_cities();
+		/*
+			foreach ($result as $city){
+		$data = $this->rideboard_model->destinations($city);
+		}*/
+	
+	
+	}
+	
+	function index()
 	{
-		$data = array('title' => "Ride Board", 'main_content' => 'rideboard_view');
+		$data = array('title' => "Ride Board", 'main_content' => 'rideboard_view', 'cities' => $result);
 		$this->load->view('template', $data);
 	}
+	
+
 }
