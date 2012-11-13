@@ -1,5 +1,7 @@
 <?php
 
+$server_url_prefix = '/var/www/html/CodeIgniter/';
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -58,7 +60,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$system_path = 'system';
+	$system_path = server_url_prefix . 'system';
 
 /*
  *---------------------------------------------------------------
@@ -74,8 +76,8 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = 'application';
-	
+	$application_folder = $server_url_prefix . 'application';
+
 /*
  *---------------------------------------------------------------
  * VIEW FOLDER NAME
@@ -90,7 +92,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$view_folder = $application_folder . 'views';
+	$view_folder = $server_url_prefix . '/m/views';
 
 /*
  * --------------------------------------------------------------------
@@ -208,7 +210,7 @@ if (defined('ENVIRONMENT'))
 
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
-
+	
 	// The path to the "views" folder
 	if (is_dir($view_folder)) 
 	{
