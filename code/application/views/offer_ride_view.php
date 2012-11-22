@@ -3,6 +3,7 @@
 <?=validation_errors(); ?>
 <?php echo form_open('offer_ride/build_trip'); 
 
+
 $trip_title = array (
 	'name'	=>	'trip_title',
 	'id'	=>	'trip_title',
@@ -32,10 +33,10 @@ $cities = array (
 	'Pittsburgh' => 'Pittsburgh, PA',
 	'Philadelphia' => 'Philadelphia, PA');
 
-$date_leaving = array (
+$date_leaving_array = array (
 	'name'	=>	'date_leaving',
 	'id'	=>	'date_leaving',
-	'value'	=>	set_value('date_leaving')
+	'value'	=>	set_value('date_leaving', '')
 );
 
 $times = array (
@@ -50,7 +51,7 @@ $times = array (
 $return_date = array(
 	'name' => 'return_date',
 	'id'   => 'return_date',
-	'value'=> set_value('return_date')
+	'value'=> set_value('return_date', '')
 );
 
 $passengers_list = array (
@@ -73,6 +74,8 @@ $details = array (
 
 
 ?>
+
+
 
 <ul>
 <li>
@@ -99,10 +102,10 @@ $details = array (
 		<?=form_dropdown('closest_city', $cities, 'large'); ?>
 	</div>
 </li>
-<li>
-	<label for="date_leaving">Date Leaving</label>
+<li >
+	<label for="date_leaving">Date Leaving (mm/dd/yyyy)</label>
 	<div>
-		<?=form_input($date_leaving); ?>
+		<?=form_input('date_leaving', $date_leaving_array, 'id = leaving_datepicker')?>
 	</div>
 </li>
 <li>
@@ -112,9 +115,9 @@ $details = array (
 	</div>
 </li>
 <li>
-	<label for="return_date">Return Date</label>
+	<label for="return_date">Return Date (mm/dd/yyyy)</label>
 	<div>
-		<?=form_input($return_date); ?>
+		<?=form_input('return_date',$return_date, 'id = return_datepicker')?>
 	</div>
 </li>
 <li>
@@ -142,4 +145,5 @@ $details = array (
 	</div>
 </li>
 </ul>
+
 <?=form_close(); ?>
