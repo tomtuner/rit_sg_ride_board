@@ -47,13 +47,7 @@ class Offer_Ride extends CI_Controller {
 			$details = $this->input->post('details');
 			$return_date = $this->input->post('return_date');
 			$return_time = $this->input->post('return_time');
-			//$valid_dates = $this->trip_model->verify_dates($return_date, $date_leaving);
-			//if ($valid_dates == FALSE){
-			//	$data = array('title' => 'Offer a Ride', 'main_content' => 'offer_ride_view');
-			//	$this->load->view('template', $data);
-			//}
-			//else
-			//{	
+		
 				$data = array(  'departure_address' => $departure_address,
 							'destination_address' => $destination_address,
 							'closest_city' => $closest_city,
@@ -70,7 +64,7 @@ class Offer_Ride extends CI_Controller {
 			
 				$this->offer_ride_model->create_trip($data);
 		
-			//}
+		
 		}
 	}
 	
