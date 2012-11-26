@@ -1,7 +1,6 @@
 <div class="logo left">
-	<div id="banner">
-		<h1>Welcome to SG Ride Board!</h1>
-	</div>
+	<h1>Ride Board</h1>
+	<span>presented by SG</span>
 </div>
 <ul class="nav nav-primary" >
 	<li><?= anchor('rideboard', 'Home'); ?></li>
