@@ -1,20 +1,17 @@
 <?php
 
-class ridebmodel_model extends CI_Model {
+class rideboard_model extends CI_Model {
 
 	function popular_cities(){
 		
-		$sql = "SELECT closest_city, COUNT(closest_city) as c FROM trips GROUP BY closest_city ORDER BY c DESC LIMIT 0,12"; 
+		$sql = "SELECT closest_city, COUNT(trips.closest_city) as c FROM trips GROUP BY closest_city ORDER BY c DESC LIMIT 0,5"; 
 		
-		$this -> db -> query($sql);
-		$query = $this -> db -> get();
-
-		return $query;
+		return $this -> db -> query($sql);
 	}
 	
 	function two_weeks(){	
 		
-		$sql = "SELECT * from trips WHERE departure_date BETWEEN now() and DATE_ADD(NOW(), INTERVAL +14 DAY)";
+		$sql = "SELECT * from trips WHERE departure_date BETWEEN now() and DATE_ADD(NOW(), INTERVAL + 14 DAY)";
 		$this -> db -> query($sql);
 		$query = $this -> db -> get();
 		return $query;

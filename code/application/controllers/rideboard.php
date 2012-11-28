@@ -3,6 +3,7 @@ class Rideboard extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+		$this->load->model('rideboard_model');
 	}
 	
 	function check_database(){
@@ -18,6 +19,7 @@ class Rideboard extends CI_Controller {
 	
 	function index()
 	{
+		$result = $this->rideboard_model->popular_cities();
 		$data = array('title' => "Ride Board", 'main_content' => 'rideboard_view', 'cities' => $result);
 		$this->load->view('template', $data);
 	}
