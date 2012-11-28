@@ -24,8 +24,8 @@
 
 		<script>
   		 $(function() {
-        	$( "#leaving_datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
-        	$( "#return_datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
+        	$( "#leaving_datepicker" ).datepicker({dateFormat: 'mm-dd-yy'});
+        	$( "#return_datepicker" ).datepicker({dateFormat: 'mm-dd-yy'});
    		 });
     	</script>
     </head>
