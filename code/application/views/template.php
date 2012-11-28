@@ -14,12 +14,6 @@
     	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
     	<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     	<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
- <!--  	<script src="jquery-ui.js"></script>
-        <script src="<?=base_url('js/plugins.js');?>"></script>
-        <script src="<?=base_url('js/main.js');?>"></script>
-        <script src="<?=base_url('js/jquery.js')?>"></script>
-        <script src="<?=base_url('js/jquery.easing.js');?>"></script>
-        <script src="<?=base_url('js/jquery.collapse.js');?>"></script> -->
         
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -30,8 +24,8 @@
 
 		<script>
   		 $(function() {
-        	$( "#leaving_datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
-        	$( "#return_datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
+        	$( "#leaving_datepicker" ).datepicker({dateFormat: 'mm-dd-yy'});
+        	$( "#return_datepicker" ).datepicker({dateFormat: 'mm-dd-yy'});
    		 });
     	</script>
     </head>
@@ -42,28 +36,16 @@
 
         <!-- Add your site or application content here -->
         <div id="master">
-			<header>
+			<div id="header">
 				<?php $this->load->view('includes/header');?>
-			</header> 
+			</div> 
 			<div id="content" role="main">
 				<?php $this->load->view($main_content);?>
 			</div>
-			<footer>
+			<div id="footer">
 				<?php $this->load->view('includes/footer');?>
-			</footer>       
+			</div>       
         </div>
-
-        <script type="text/javascript">			
-			$(function(){				
-				$('#city_list').jqcollapse({
-				   slide: true,
-				   speed: 1000,
-				   easing: 'easeOutCubic'
-				});				
-			});
-		</script>
-x		
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
