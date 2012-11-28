@@ -10,14 +10,24 @@
 		<meta name="description" content="An online ride board to plan trips, establish car pools and get to where you want to go efficiently.">
 		<link type="text/plain" rel="author" href="<?=base_url('humans.txt');?>" />
         <meta name="viewport" content="width=device-width">
+        
+    	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    	<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    	<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+        
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="<?=base_url('css/normalize.css');?>">
         <link rel="stylesheet" href="<?=base_url('css/main.css');?>">
         <link rel="stylesheet" href="<?=base_url('css/rideboard.css');?>">
-        <script src="<?=base_url('js/vendor/modernizr-2.6.2.min.js');?>"></script>
+	    <script src="<?=base_url('js/vendor/modernizr-2.6.2.min.js');?>"></script>
 
-
+		<script>
+  		 $(function() {
+        	$( "#leaving_datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
+        	$( "#return_datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
+   		 });
+    	</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -26,34 +36,16 @@
 
         <!-- Add your site or application content here -->
         <div id="master">
-			<header>
+			<div id="header">
 				<?php $this->load->view('includes/header');?>
-			</header> 
+			</div> 
 			<div id="content" role="main">
 				<?php $this->load->view($main_content);?>
 			</div>
-			<footer>
+			<div id="footer">
 				<?php $this->load->view('includes/footer');?>
-			</footer>       
+			</div>       
         </div>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-        <script src="<?=base_url('js/plugins.js');?>"></script>
-        <script src="<?=base_url('js/main.js');?>"></script>
-        <script src="<?=base_url('js/jquery.js')?>"></script>
-        <script src="<?=base_url('js/jquery.easing.js');?>"></script>
-        <script src="<?=base_url('js/jquery.collapse.js');?>"></script>
-                <script type="text/javascript">			
-			$(function(){				
-				$('#city_list').jqcollapse({
-				   slide: false,
-				   speed: 300,
-				   easing: 'easeOutCubic'
-				});				
-			});			
-		</script>
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
@@ -61,5 +53,7 @@
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+        
+       
     </body>
 </html>

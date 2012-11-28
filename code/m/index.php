@@ -58,7 +58,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$system_path = 'system';
+	$system_path = '../system';
 
 /*
  *---------------------------------------------------------------
@@ -74,8 +74,8 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = 'application';
-	
+	$application_folder = '../application';
+
 /*
  *---------------------------------------------------------------
  * VIEW FOLDER NAME
@@ -90,7 +90,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$view_folder = $application_folder . 'views';
+	$view_folder = 'views';
 
 /*
  * --------------------------------------------------------------------
@@ -208,7 +208,7 @@ if (defined('ENVIRONMENT'))
 
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
-
+	
 	// The path to the "views" folder
 	if (is_dir($view_folder)) 
 	{
