@@ -20,8 +20,8 @@ class Offer_Ride extends CI_Controller {
 		$this->load->library('form_validation');
 		
 		$this->form_validation->set_rules('trip_title', 'Trip Title', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('departure_address', 'Departure address', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('destination_address', 'Destination address', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('departure_address', 'Departure address', 'trim|required|xss_clean|callback_validate_location_depart');
+		$this->form_validation->set_rules('destination_address', 'Destination address', 'trim|required|xss_clean|callback_validate_location_arrive');
 		$this->form_validation->set_rules('closest_city', 'Closest city to destination', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('date_leaving', 'Departure date', 'trim|required|xss_clean|callback_validate_leaving_date|callback_verify_order');
 		$this->form_validation->set_rules('time_leaving', 'Departure time', 'trim|xss_clean');
@@ -108,6 +108,38 @@ class Offer_Ride extends CI_Controller {
 			$this->form_validation->set_message('verify_order', 'Return date must be on or after depart date');
 			return false;
 	
+		}
+	}
+	
+	function validate_location_depart($address)
+	{
+	
+		list($result, $result1, $result2) = $this->trip_model->parse_address($address);
+	
+		if($result == 'error')
+		{
+			$this->form_validation->set_message('validate_location_depart', 'Please enter valid departure location "City, State ZipCode"');
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	function validate_location_arrive($address)
+	{
+	
+		list($result, $result1, $result2) = $this->trip_model->parse_address($address);
+	
+		if($result == 'error')
+		{
+			$this->form_validation->set_message('validate_location_arrive', 'Please enter valid destination location "City, State ZipCode"');
+			return false;
+		}
+		else
+		{
+			return true;
 		}
 	}
 	

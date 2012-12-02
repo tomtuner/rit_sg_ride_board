@@ -36,4 +36,29 @@ class Trip_Model extends CI_Model{
 			return true;
 		}
 	}
+	
+	function parse_address($address)
+	{
+		$string_exist = stristr($address, ',');
+		if(empty($string_exist))
+		{
+			return array('error','error','error');
+		}
+		else
+		{
+			list($city, $rest_string) = explode(',', $address);
+			$state = substr($rest_string, 0, 3);
+			$zip = substr($rest_string, 4);
+			$error_string = 'error';
+			if(empty($state) || empty($zip) || strlen($zip) != 5 || strlen($state) != 3)
+			{
+				return array($error_string, $error_string, $error_string);
+			}
+			else
+			{
+				return array($city, $state, $zip);
+			}
+			
+		}
+	}
 }
