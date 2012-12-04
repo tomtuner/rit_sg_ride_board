@@ -47,9 +47,18 @@ class Offer_Ride extends CI_Controller {
 			$details = $this->input->post('details');
 			$return_date = $this->input->post('return_date');
 			$return_time = $this->input->post('return_time');
+			
+			list($depart_city,$depart_state, $depart_zip) = $this->trip_model->parse_address($departure_address);
+			list($dest_city,$dest_state,$dest_zip) = $this->trip_model->parse_address($destination_address);
+			$return_date = $this->trip_model->format_date($return_date);
+			$date_leaving = $this->trip_model->format_date($date_leaving);
 		
-			$data = array(  'departure_address' => $departure_address,
-							'destination_address' => $destination_address,
+			$data = array(  'dest_city' => $dest_city,
+							'dest_state' => $dest_state,
+							'dest_zip' => $dest_zip,
+							'depart_city' => $depart_city,
+							'depart_state' => $depart_state,
+							'depart_zip' => $depart_zip,
 							'closest_city' => $closest_city,
 							'date_leaving' => $date_leaving,
 							'time_leaving' => $time_leaving,

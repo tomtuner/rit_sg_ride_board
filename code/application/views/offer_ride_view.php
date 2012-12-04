@@ -35,8 +35,7 @@ $cities = array (
 
 $date_leaving_array = array (
 	'name'	=>	'date_leaving',
-	'id'	=>	'date_leaving',
-	'value'	=>	set_value('date_leaving', '')
+	'id'	=>	'date_leaving'
 );
 
 $times = array (
@@ -97,7 +96,7 @@ $details = array (
 	</div>
 </li>
 <li>
-	<label for="closest_city">Closest City</label>
+	<label for="closest_city">Closest City to Destination</label>
 	<div>
 		<?=form_dropdown('closest_city', $cities, 'large'); ?>
 	</div>

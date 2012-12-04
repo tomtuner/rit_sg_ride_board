@@ -61,4 +61,11 @@ class Trip_Model extends CI_Model{
 			
 		}
 	}
+	
+	function format_date($date)
+	{
+		list($month, $day, $year) = explode('-', $date);
+		$return_date = $year . '-' . $month . '-' . $day;
+		return $return_date;
+	}
 }

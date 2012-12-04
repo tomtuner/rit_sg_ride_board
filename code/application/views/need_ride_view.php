@@ -22,6 +22,17 @@ $destination_address = array (
 	'value'	=>	set_value('destination_address')
 );
 
+$cities = array (
+		'Boston'	=>	'Boston, MA',
+		'NY'	=>	'New York, NY',
+		'Hartford'	=>	'Hartford, CT',
+		'Burlington' => 'Burlington, VT',
+		'Syracuse' => 'Syracuse, NY',
+		'Albany' => 'Albany, NY',
+		'Buffalo' => 'Buffalo, NY',
+		'Pittsburgh' => 'Pittsburgh, PA',
+		'Philadelphia' => 'Philadelphia, PA');
+
 $date_leaving_array = array (
 	'name'	=>	'date_leaving',
 	'id'	=>	'date_leaving',
@@ -67,6 +78,12 @@ $details = array (
 	<label for="destination_address">Destination Address (City, State, Zip Code)</label>
 	<div>
 		<?=form_input($destination_address); ?>
+	</div>
+</li>
+<li>
+	<label for="closest_city">Closest City to Destination</label>
+	<div>
+		<?=form_dropdown('closest_city', $cities, 'large'); ?>
 	</div>
 </li>
 <li >

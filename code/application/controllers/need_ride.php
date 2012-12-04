@@ -24,6 +24,7 @@ class Need_Ride extends CI_Controller {
 		$this->form_validation->set_rules('time_leaving', 'Time Leaving', 'trim|xss_clean|required');
 		$this->form_validation->set_rules('date_leaving', 'Date Leaving', 'trim|xss_clean|required|callback_verify_date');
 		$this->form_validation->set_rules('destination_address', 'Destination Address', 'trim|xss_clean|required|callback_validate_location_arrive');
+		$this->form_validation->set_rules('closest_city', 'Closest City', 'trim|xss_clean|required');
 		//$this->form_validation->set_rules('round_trip', 'Round Trip', 'trim|xss_clean');
 		//$this->form_validation->set_rules('return_date', 'Return date', 'trim|xss_clean');
 		//$this->form_validation->set_rules('return_time', 'Return time', 'trim|xss_clean');
@@ -41,19 +42,25 @@ class Need_Ride extends CI_Controller {
 			$departure_time = $this->input->post('time_leaving');
 			$departure_date = $this->input->post('date_leaving');
 			$destination_location = $this->input->post('destination_address');
+			$closest_city = $this->input->post('closest_city');
 			//$round_trip = $this->input->post('round_trip');
 			$details = $this->input->post('details');
 
 			list($depart_city, $depart_state, $depart_zip) = $this->trip_model->parse_address($departure_location);
 			list($dest_city, $dest_state, $dest_zip) = $this->trip_model->parse_address($destination_location);
-				
+			$depart_date = $this->trip_model->format_date(depart_date);
 
 				
 			$data = array('trip_title' => $trip_title,
-					'departure_location' => $departure_location,
+					'dest_city' => $dest_city,
+					'dest_state' => $dest_state,
+					'dest_zip' => $dest_zip,
+					'depart_city' => $depart_city,
+					'depart_state' => $depart_state,
+					'depart_zip' => $depart_zip,
+					'closest_city' => $closest_city,
 					'departure_time' => $departure_time,
 					'departure_date' => $departure_date,
-					'destination_location' => $destination_location,
 					'details' => $details);
 				
 			$this->need_ride_model->create_request($data);
