@@ -28,7 +28,8 @@ class SignUp extends CI_Controller {
 		$this->form_validation->set_rules('ph_num', 'Phone Number', 'trim|required|xss_clean|numeric');
 		$this->form_validation->set_rules('school_address', 'School Address', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('home_address', 'Home Address', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('sex', 'Gender', 'trim|strtolower|xss_clean');
+		$this->form_validation->set_rules('sex_group', 'Gender', 'trim|strtolower|xss_clean');
+		
 		$this->form_validation->set_rules('deaf', 'Deaf', 'trim|xss_clean');
 
 		if($this->form_validation->run() == FALSE)
@@ -45,11 +46,16 @@ class SignUp extends CI_Controller {
 			$first_name = $this->input->post('first_name');
 			$last_name = $this->input->post('last_name');
 			$ph_num = $this->input->post('ph_num');
-			$school_address = $this->input->post('school_address');
+			$school_address_line_1 = $this->input->post('school_address_line_1');
+			$school_address_line_2 = $this->input->post('school_address_line_2');
+			$school_city = $this->input->post('school_city');
+			$school_state = $this->input->post('school_state');
+			$school_zip = $this->input->post('school_zip');
+
 			$home_address = $this->input->post('home_address');
 			$deaf = $this->input->post('deaf');
-			$sex = $this->input->post('sex');
-			$sex = $this->convert_sex_to_num($sex);
+			$sex = $this->input->post('sex_group');
+			$smoker = $this->input->post('smoker');
 			$activation_code = $this->_random_string(16);
 						
 			$data = array(
@@ -57,11 +63,21 @@ class SignUp extends CI_Controller {
 			'password'	=>	$password,
 			'first_name'	=>	$first_name,
 			'last_name'	=>	$last_name,
-			'school_address'	=>	$school_address,
-			'home_address'	=>	$home_address,
+			's_address_line_1'	=>	$school_address_line_1,
+			's_address_line_2'	=>	$school_address_line_2,
+			's_city'	=>	$school_city,
+			's_state'	=>	$school_state,
+			's_zip'	=>	$school_zip,
+
+			'h_address_line_1'	=>	$home_address_line_1,
+			'h_address_line_2'	=>	$home_address_line_2,
+			'h_city'	=>	$home_city,
+			'h_state'	=>	$home_state,
+			'h_zip'	=>	$hoem_zip,
 			'ph_num'	=>	$ph_num,
 			'deaf'	=>	$deaf,
 			'sex'	=>	$sex,
+			'smoker'	=>	$smoker,
 			'activation_code'	=>	$activation_code
 		);
 

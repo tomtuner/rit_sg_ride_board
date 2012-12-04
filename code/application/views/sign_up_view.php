@@ -61,9 +61,27 @@ $options = array(
     'none'   => 'I\'d rather not say'
 );
 
+$sex_male = array(
+	'name'	=>	'sex_group',
+	'value'	=>	'M',
+	'checked'	=> TRUE
+);
+
+$sex_female = array(
+	'name'	=>	'sex_group',
+	'value'	=>	'F',
+	'checked'	=> FALSE
+);
+
 $deaf = array(
 	'name'        => 'deaf',
 	'id'          => 'deaf',
+	'value'       => 'accept'
+);
+
+$smoker = array(
+	'name'        => 'smoker',
+	'id'          => 'smoker',
 	'value'       => 'accept'
 );
 	
@@ -119,15 +137,24 @@ $deaf = array(
 	</div>
 </li>
 <li>
-	<label for="sex">What do you identify as?</label>
+	<label for="sex_group">What do you identify as?</label>
 	<div>
-		<?=form_dropdown('sex', $options, 'large');?>
+		<?=form_radio($sex_male);?> M
+	</div>
+	<div>
+		<?=form_radio($sex_female);?> F
 	</div>
 </li>
 <li>
 	<label for="deaf">Deaf</label>
 	<div>
 		<?=form_checkbox($deaf); ?>
+	</div>
+</li>
+<li>
+	<label for="smoker">Are you a smoker?</label>
+	<div>
+		<?=form_checkbox($smoker); ?>
 	</div>
 </li>
 

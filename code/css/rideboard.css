@@ -15,7 +15,7 @@ a {
 	-o-transition: color 0.3s linear;
 	-webkit-transition: color 0.3s linear;
 	transition: color 0.3s linear;
-	color: #FFFFFF;
+	color: #513127;
 	text-decoration: none;
 }
 a:hover {
@@ -33,6 +33,7 @@ p,
 ul,
 ol {
 	margin-bottom: 1em;
+	list-style-type: none;
 }
 
 /*-  MAIN
@@ -49,7 +50,7 @@ ol {
 .logo:after,
 .nav-primary:after,
 .lede:after {
-	content: ".";
+	content: "";
 	height: 100%;
 	position: absolute;
 	left: 0;
@@ -66,11 +67,15 @@ ol {
     right:-10px;
     background:#F36E21;
     z-index:-1;
-    -moz-transform: skew(-25deg);
-   -webkit-transform: skew(-25deg);
     box-shadow:-10px 10px 0 0 #F29F6F;
     -moz-box-shadow:-10px 10px 0 0 #F29F6F;
     -webkit-box-shadow:-10px 10px 0 0 #F29F6F;
+}
+
+.skew {
+	transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+   -webkit-transform: skew(-10deg);
 }
 
 img {
@@ -88,6 +93,7 @@ img {
 	/*background: #F36E21; */
 	float: left;
 	padding-left: 1.0em;
+	padding-right: 1.0em;
 	width: 16.875%;	/* 162 / 960 */
 }
 
@@ -110,14 +116,16 @@ img {
 	text-transform: uppercase;
 	top: 24px;
 	z-index: 99;
+	
 }
 
 .nav-primary:after,
 .lede:after {
-	-moz-box-shadow: 1px -1px 0 #751910, 2px -2px 0 #751910, 3px -3px 0 #751910, 4px -4px 0 #751910, 5px -5px 0 #751910, 6px -6px 0 #751910, 7px -7px 0 #751910, 8px -8px 0 #751910, 9px -9px 0 #751910, 10px -10px 0 #751910, 11px -11px 0 #751910;
-	-webkit-box-shadow: 1px -1px 0 #751910, 2px -2px 0 #751910, 3px -3px 0 #751910, 4px -4px 0 #751910, 5px -5px 0 #751910, 6px -6px 0 #751910, 7px -7px 0 #751910, 8px -8px 0 #751910, 9px -9px 0 #751910, 10px -10px 0 #751910, 11px -11px 0 #751910;
-	box-shadow: 1px -1px 0 #751910, 2px -2px 0 #751910, 3px -3px 0 #751910, 4px -4px 0 #751910, 5px -5px 0 #751910, 6px -6px 0 #751910, 7px -7px 0 #751910, 8px -8px 0 #751910, 9px -9px 0 #751910, 10px -10px 0 #751910, 11px -11px 0 #751910;
+	background-color: #513127;
 	opacity: 0.2;
+	-moz-box-shadow: 10px -10px #513127;
+	-webkit-box-shadow: 10px -10px #513127;
+	box-shadow: 10px -10px #513127;
 }
 
 .nav-primary li {
@@ -135,9 +143,48 @@ img {
 	color: #F8F5F2;
 }
 
+.inner-content {
+	margin: 5% auto 25px;
+	width: 92.7%; /* 890px / 960px */
+}
 
+.inner-content .upcoming-trips {
+	float: left;
+	width: 64.49%; /* 577px / 890px */
+}
 
+.inner-content .statistics {
+	float: right;
+	width: 25.06%; /* 223px / 890px */
+}
 
+.gray-header {
+	font-size: 2.5em;
+	border: 2px solid black;
+	background-color: #878787;
+	text-align: center;
+	padding: 0.3em;
+}
+
+.light-orange-header {
+	font-size: 2.5em;
+	border: 2px solid #F36E21;
+	background-color: #F29F6F;
+	text-align: center;
+	padding: 0.3em;
+}
+
+.legend-box {
+	width: 3.59%;
+}
+
+.light-brown {
+	background-color: #FFD473;
+}
+
+.dark-brown {
+	background-color: #C98235;
+}
 
 
 
@@ -172,20 +219,12 @@ img {
 }
 
 #footer{
-	width:100%;
-	background:#513127;
-	margin-left: auto;
-	margin-right: auto;
-}
-#moto{
-	color:#FFFFFF;
 	text-align: center;
 }
 
 #content{
 	width:100%;
 	min-height: 400px;
-	background:#FFFFFF;
 	margin-left: auto;
 	margin-right: auto;
 }

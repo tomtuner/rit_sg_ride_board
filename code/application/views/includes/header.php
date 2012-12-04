@@ -1,4 +1,4 @@
-<div class="logo left">
+<div class="logo skew left">
 	<h1>Ride Board</h1>
 	<span>presented by SG</span>
 </div>

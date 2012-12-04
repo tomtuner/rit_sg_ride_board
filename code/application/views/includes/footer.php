@@ -1,1 +1,3 @@
-<div id="moto">This page was created by those who care about innovation.</div>
+<div id="moto">Designed and developed by <a href="#">RIT Students</a></div>
+<div>&copy; 2012</div>
+<div>Be a part of something bigger.</div>
