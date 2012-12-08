@@ -89,7 +89,7 @@ $details = array (
 <li >
 	<label for="date_leaving">Date Leaving (mm/dd/yyyy)</label>
 	<div>
-		<?=form_input('date_leaving', $date_leaving_array, 'id = leaving_datepicker')?>
+		<?=form_input('date_leaving','', 'id = leaving_datepicker')?>
 	</div>
 </li>
 <li>

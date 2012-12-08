@@ -48,7 +48,7 @@ class Need_Ride extends CI_Controller {
 
 			list($depart_city, $depart_state, $depart_zip) = $this->trip_model->parse_address($departure_location);
 			list($dest_city, $dest_state, $dest_zip) = $this->trip_model->parse_address($destination_location);
-			$depart_date = $this->trip_model->format_date(depart_date);
+			$depart_date = $this->trip_model->format_date($departure_date);
 
 				
 			$data = array('trip_title' => $trip_title,

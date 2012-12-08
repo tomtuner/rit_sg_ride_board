@@ -104,7 +104,7 @@ $details = array (
 <li >
 	<label for="date_leaving">Date Leaving (mm/dd/yyyy)</label>
 	<div>
-		<?=form_input('date_leaving', $date_leaving_array, 'id = leaving_datepicker')?>
+		<?=form_input('date_leaving', '', 'id = leaving_datepicker')?>
 	</div>
 </li>
 <li>
@@ -116,7 +116,7 @@ $details = array (
 <li>
 	<label for="return_date">Return Date (mm/dd/yyyy)</label>
 	<div>
-		<?=form_input('return_date',$return_date, 'id = return_datepicker')?>
+		<?=form_input('return_date','', 'id = return_datepicker')?>
 	</div>
 </li>
 <li>
